@@ -20,12 +20,22 @@
     </style>
 </head>
 <body>
+<!--
+“positioned”元素是指 position 值不是 static 的元素。
+absolute 是最棘手的position值。 absolute 与 fixed 的表现类似，但是它不是相对于视窗而是相对于最近的“positioned”祖先元素。
+如果绝对定位（position属性的值为absolute）的元素没有“positioned”祖先元素，那么它是相对于文档的 body 元素，并且它会随着页面滚动而移动。
+-->
 <div style="width: 200px; height: 300px; background-color: blue; position: relative; top: 10px"></div>
 <div class="my-div">
     <div style="width: 100px; height: 300px; background-color: black; position: absolute; top: 50px"></div>
 </div>
-<div style="width: 1500px; height: 200px; background-color: red"></div>
+<div style="width: 1500px; height: 200px; background-color: red; z-index: 9999"></div>
 <div style="width: 400px; height: 100px; background-color: green"></div>
+
+<div style="position:absolute; top: 50px; left: 400px; border: solid medium aqua; background-color: gray; width: 500px; height: 500px;">
+    <div style="position:absolute; top: 50px; left: 20px; border-style: solid; border-width: thick; border-color: #eda83b; width: 80px; height: 300px;">
+    </div>
+</div>
 
 <div class="fix-div"></div>
 </body>
