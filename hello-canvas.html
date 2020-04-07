@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<p>canvas eg</p>
+<canvas id="myCanvas" width="2000" height="1000" style="border:1px solid #c3c3c3;">
+    Your browser does not support the canvas element.
+</canvas>
+
+<!--
+canvas例子要放到服务器才能访问
+http://localhost:8098/webtest/hello-canvas.html
+-->
+<script type="text/javascript">
+
+    var c=document.getElementById("myCanvas");
+    var cxt=c.getContext("2d");
+    var img=new Image()
+    img.src="https://cdn.jdy.com/mjdy/crm/haibao/img13.jpg"
+    cxt.drawImage(img,0,0);
+
+    var img2=new Image()
+    img2.src="https://crm.jdy.com/app/static/img/xfbg.e64a510.png"
+    cxt.drawImage(img2, 10, 200, 200, 100)
+
+</script>
+
+</body>
+</html>
