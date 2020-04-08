@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test 2</title>
+    <!-- 参考 http://zh.learnlayout.com/position.html   -->
+    <style>
+        .container {
+            position: relative;
+        }
+
+        nav.elem {
+            position: absolute;
+            left: 0px;
+            width: 200px;
+        }
+
+        section {
+            /* position is static by default */
+            margin-left: 200px;
+        }
+
+        footer.elem {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 90px;
+            background-color: white;
+            width: 100%;
+        }
+
+        body {
+            margin-bottom: 120px;
+        }
+
+        .label {
+            top: 0;
+            left: 0;
+            padding: 0 3px 3px 0;
+        }
+
+        .endlabel {
+            right: 0;
+            bottom: 0;
+            padding: 3px 0 0 3px;
+        }
+
+        .label, .endlabel {
+            position: absolute;
+            background-color: #6AC5AC;
+            color: #414142;
+            line-height: 1em;
+        }
+
+        .elem {
+            border: solid  #6AC5AC 3px;
+            position: relative;
+        }
+
+        .elem-red {
+            border: solid #D64078 3px;
+        }
+
+        .elem-red > .label, .elem-red > .endlabel {
+            color: white;
+            background-color: #D64078;
+        }
+
+        .elem-orange {
+            border: solid #96C02E 3px;
+        }
+
+        .elem-orange > .label, .elem-orange > .endlabel {
+            background-color: #96C02E;
+        }
+
+        .elem-green {
+            border: solid #FDC72F 3px;
+        }
+        .elem-green > .label, .elem-green > .endlabel{
+            background-color: #FDC72F;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container elem">
+    <span class="label">&lt;div class="container"&gt;</span>
+
+    <nav class="elem elem-red">
+        <span class="label">&lt;nav&gt;</span>
+        <ul>
+            <li>
+                <a href="position-example.html">Home</a>
+            </li>
+            <li>
+                <a href="position-example.html">Taco Menu</a>
+            </li>
+            <li>
+                <a href="position-example.html">Draft List</a>
+            </li>
+            <li>
+                <a href="position-example.html">Hours</a>
+            </li>
+            <li>
+                <a href="position-example.html">Directions</a>
+            </li>
+            <li>
+                <a href="position-example.html">Contact</a>
+            </li>
+        </ul>
+        <span class="endlabel">&lt;/nav&gt;</span>
+    </nav>
+
+    <section class="elem elem-green">
+        <span class="label">&lt;section&gt;</span>
+        <p>
+            <code>section</code> 的 <code>margin-left</code> 样式确保了有足够的空间容纳 <code>nav</code> 元素。
+        </p>
+        <span class="endlabel">&lt;/section&gt;</span>
+    </section>
+
+    <section class="elem elem-green ipsum">
+        <span class="label">&lt;section&gt;</span>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+            lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue
+            eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare
+            eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+            dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare
+            turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed
+            dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+        </p>
+        <span class="endlabel">&lt;/section&gt;</span>
+    </section>
+
+    <section class="elem elem-green">
+        <span class="label">&lt;section&gt;</span>
+        <p>
+            注意观察当你调整浏览器窗口时发生了什么。效果很赞！
+        </p>
+        <span class="endlabel">&lt;/section&gt;</span>
+    </section>
+
+    <footer class="elem elem-orange">
+        <span class="label">&lt;footer&gt;</span>
+        <p>
+            如果你使用了一个固定定位的页眉或页脚，确保有足够的空间来显示它们！我在 <code>body</code> 上面加了 <code>margin-bottom</code> 。
+        </p>
+        <span class="endlabel">&lt;/footer&gt;</span>
+    </footer>
+
+</div>
+</body>
+</html>
